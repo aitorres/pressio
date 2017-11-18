@@ -10,4 +10,12 @@ class CampanasController < ApplicationController
 
   def aportar
   end
+
+  def modificar
+  end
+
+  def crear
+  end
+
+  def borrar
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'campanas/crear'
+
   get 'perfil/inicio'
 
   get 'perfil/inversor'

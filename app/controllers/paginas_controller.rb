@@ -7,4 +7,5 @@ class PaginasController < ApplicationController
 
   def equipo
   end
+
 end
