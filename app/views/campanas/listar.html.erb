@@ -3,9 +3,18 @@
 <h1>¡Campañas!</h1>
 <p>Cada Jugador tiene una historia que contar: un proyecto, una empresa, una visión de futuro para compartir contigo. ¡Escucha su voz y escribe esta historia con ellos!</p>
 
+
 <% if !@campanas.blank? %>
     <% for campana in @campanas %>
-        <%= campana.nombre %>
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title"><%= campana.nombre %></h4>
+            <p class="card-text"><%= campana.sinopsis %></p>
+            <a href="/campanas/ver/<%= campana.id %>" class="btn btn-primary">¡Leer más!</a>
+          </div>
+        </div>
+        
     <% end %>
 <% else %>
     

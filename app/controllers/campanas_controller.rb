@@ -6,7 +6,8 @@ class CampanasController < ApplicationController
   def buscar
   end
 
-  def visualizar
+  def ver
+    @id = params[:id]
   end
 
   def aportar

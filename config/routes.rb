@@ -13,7 +13,11 @@ Rails.application.routes.draw do
 
   get 'campanas/buscar'
 
-  get 'campanas/visualizar'
+  get 'campanas/ver'
+
+  get '/campanas/ver/:id' => 'campanas#ver', constraints: {
+    id:       /\{[0-9]\}/,
+  }
 
   get 'campanas/aportar'
 
