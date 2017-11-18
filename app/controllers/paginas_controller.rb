@@ -2,7 +2,7 @@ class PaginasController < ApplicationController
   def inicio
   end
 
-  def quienes-somos
+  def quienes_somos
   end
 
   def equipo
