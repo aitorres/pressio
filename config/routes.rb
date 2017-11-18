@@ -15,7 +15,6 @@ Rails.application.routes.draw do
 
   get 'campanas/aportar'
 
-  devise_for :usuarios
   get 'paginas/inicio'
 
   get 'paginas/quienes_somos'
@@ -24,11 +23,7 @@ Rails.application.routes.draw do
 
   root to: 'paginas#inicio'
 
-  devise_scope :usuario do
-    get 'iniciar-sesion', to: 'devise/sessions#new', :as => :new_user_session
-    post 'iniciar-sesion', to: 'devise/sessions#create', :as => :user_session
-    delete 'cerrar-sesion', to: 'devise/sessions#destroy', :as => :destroy_user_session
-  end
+  devise_for :usuario, :path => '', :path_names => { :sign_in => "iniciar-sesion", :sign_out => "cerrar-sesion", :sign_up => "registro" }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
