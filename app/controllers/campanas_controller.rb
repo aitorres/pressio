@@ -13,7 +13,8 @@ class CampanasController < ApplicationController
   end
 
   def ver
-    @id = params[:id]
+    id = params[:id].to_i
+    @campana = Proyecto.all[id]
   end
 
   def aportar
