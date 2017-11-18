@@ -15,9 +15,7 @@ Rails.application.routes.draw do
 
   get 'campanas/ver'
 
-  get '/campanas/ver/:id' => 'campanas#ver', constraints: {
-    id:       /\{[0-9]\}/,
-  }
+  get '/campanas/ver/:id' => 'campanas#ver', constraints: { :id => /[0-9]+(\%7C[0-9]+)*/ }
 
   get 'campanas/aportar'
 
