@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'perfil/inicio'
+
+  get 'perfil/inversor'
+
+  get 'perfil/talentos'
+
+  get 'perfil/creador'
+
+  get 'campanas/listar'
+
+  get 'campanas/buscar'
+
+  get 'campanas/visualizar'
+
+  get 'campanas/aportar'
+
   devise_for :usuarios
   get 'paginas/inicio'
 
