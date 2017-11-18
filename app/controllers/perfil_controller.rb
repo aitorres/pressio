@@ -1,13 +1,23 @@
 class PerfilController < ApplicationController
-  def inicio
-  end
+	def inicio
+		if usuario_signed_in?
+			@nombre = current_usuario.email
+		end
 
-  def inversor
-  end
+	end
 
-  def talentos
-  end
+	def inversor
+		@inversor = 
+		@cantidad_inversor
+	end
 
-  def creador
-  end
+	def talentos
+		@talentos = 
+		@cantidad_talentos
+	end
+
+	def creador
+		@creados
+		@cantidad_creados
+	end
 end

@@ -1,2 +1,31 @@
-<h1>Perfil#inicio</h1>
-<p>Find me in app/views/perfil/inicio.html.erb</p>
+<!--<h1>Perfil#inicio</h1>
+<p>Find me in app/views/perfil/inicio.html.erb</p>-->
+
+<header style="height: 30px; background-color: green;">
+	
+</header>
+
+<section class="menu">
+	<!--foto-->
+	<%if  @foto %>
+		<img src="@foto" alt="">
+	<%else %>
+		<img src="desconocido" alt="">
+	<%end%>
+	<!--nombre-->
+	<%if  @nombre %>
+		<p class="text-success text-center">Bienvenido "<%= @nombre %>"</p>
+	<%else %>
+		<h2>Bienvenido Desconocido</h2>
+	<%end%>
+	<hr>
+	<p class="text-warning text-center">Editar Perfil</p>
+	<p class="text-danger text-center">Cerrar Sesion</p>
+
+
+</section>
+
+<section class="main"></section>
+
+
+	
