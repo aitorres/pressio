@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'campanas/listar'
 
+  get '/campanas/listar/:pagina' => 'campanas#listar', constraints: { :pagina => /[0-9]+(\%7C[0-9]+)*/ }
+
   get 'campanas/buscar'
 
   get 'campanas/ver'
@@ -24,6 +26,10 @@ Rails.application.routes.draw do
   get 'paginas/quienes_somos'
 
   get 'paginas/equipo'
+
+  get '/quienes-somos' => 'paginas#quienes_somos'
+
+  get '/equipo' => 'paginas#equipo'
 
   root to: 'paginas#inicio'
 
