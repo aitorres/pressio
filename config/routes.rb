@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'campanas/crear'
 
   get 'perfil/inicio'
+  get 'perfil/' => 'perfil#inicio'
 
   get 'perfil/inversor'
 
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
   get 'perfil/creador'
 
   get 'campanas/listar'
+
+  get 'campanas/' => 'campanas#listar'
 
   get '/campanas/listar/:pagina' => 'campanas#listar', constraints: { :pagina => /[0-9]+(\%7C[0-9]+)*/ }
 
