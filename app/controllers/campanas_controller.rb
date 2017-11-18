@@ -1,5 +1,6 @@
 class CampanasController < ApplicationController
   def listar
+    @campanas = Proyecto.all
   end
 
   def buscar
@@ -18,4 +19,5 @@ class CampanasController < ApplicationController
   end
 
   def borrar
+  end
 end

@@ -1,2 +1,12 @@
-<h1>Campanas#listar</h1>
-<p>Find me in app/views/campanas/listar.html.erb</p>
+<%= render "paginas/header" %>
+
+<h1>¡Campañas!</h1>
+<p>Cada Jugador tiene una historia que contar: un proyecto, una empresa, una visión de futuro para compartir contigo. ¡Escucha su voz y escribe esta historia con ellos!</p>
+
+<% if !@campanas.blank? %>
+    <% for campana in @campanas %>
+        <%= campana.nombre %>
+    <% end %>
+<% else %>
+    
+<% end %>
