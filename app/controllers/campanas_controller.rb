@@ -10,6 +10,8 @@ class CampanasController < ApplicationController
   end
 
   def buscar
+    # Si no hay slug, mostrar camp ode búsqueda y un easter egg.
+    # Si hay, entonces hacer busqueda en DB y mostrar resultados en links
   end
 
   def ver
@@ -24,6 +26,7 @@ class CampanasController < ApplicationController
   end
 
   def crear
+    
   end
 
   def borrar
