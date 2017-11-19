@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171119154429) do
+ActiveRecord::Schema.define(version: 20171119172148) do
 
   create_table "inversions", force: :cascade do |t|
     t.integer "usuario"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20171119154429) do
     t.boolean "solicita_dinero"
     t.string "talentos"
     t.integer "dinero"
+    t.integer "dinero_obtenido"
   end
 
   create_table "usuarios", force: :cascade do |t|

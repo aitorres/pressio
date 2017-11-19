@@ -6,12 +6,26 @@
         <div class="col-md-8">
             <h4>Descripción del proyecto</h4>
             <%= @campana.descripcion %>
+            <% if @campana.solicita_dinero %>
+                <h3>Este proyecto solicita un aporte monetario</h3>
+                <p><strong>Cantidad solicitada</strong>: <%= @campana.dinero %></p> 
+                <p><strong>Cantidad obtenida</strong>: <%= @campana.dinero_obtenido %></p> 
+            <% end %>
+            <% if @campana.solicita_talentos %>
+                <h3>Este proyecto solicita talentos en su equipo</h3>
+            <% end %>
         </div>
         <div class="col-md-4 text-right">
             <h4>Autor</h4>
+            <hr class="limpiar" />
+            <%if !Rails.application.assets.find_asset("autor-#{@autor.id}.png").nil? %>
+                <%= image_tag "autor-#{@autor.id}.png", :class => "avatar pull-right" %>
+            <%else %>
+                <%= image_tag "desconocido.png", :class => "avatar pull-right" %>
+            <%end%>
+            <hr class="limpiar" />
             <strong><%= @autor.nombre + " " + @autor.apellido %></strong><br/>
             (<em><%= "@" + @autor.username %></em>)
-
         </div>
     </div>
 </div>
