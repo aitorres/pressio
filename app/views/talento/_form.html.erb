@@ -1,0 +1,29 @@
+<%= form_for :tal, :html => { :class => 'form-campana' } do |f| %>
+  <% if @talento.errors.any? %>
+  <div class="alert alert-danger">
+    <h3><%= pluralize(@talento.errors.count, "error") %> impidieron crear esta campaña:</h3>
+    <ul>
+    <% @talento.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :talento, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :talento, @lista %>
+
+    </div>
+  </div>
+
+  <%= f.hidden_field :usuario, value: current_usuario.id %>
+  <%= f.hidden_field :campana, value: @idc %>
+
+  
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            campanas_path, :class => 'btn btn-default' %>
+ 
+<% end %>

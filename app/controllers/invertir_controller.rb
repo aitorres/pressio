@@ -13,10 +13,10 @@ class InvertirController < ApplicationController
         campana = Proyecto.find_by(id: params[:inversion][:campana])
         campana.dinero_obtenido += params[:inversion][:dinero].to_i
         campana.save
-        format.html { redirect_to '/perfil', notice: '¡Has realizado tu aporte satisfactoriamente! ;-)' }
+        format.html { redirect_to "/campanas/ver/#{params[:inversion][:campana]}", notice: '¡Has realizado tu aporte satisfactoriamente! ;-)' }
         format.json { render :show, status: :created, location: @inversion }
       else
-        format.html { render :crear }
+        format.html { render :invertir }
         format.json { render json: @inversion.errors, status: :unprocessable_entity }
       end
     end
