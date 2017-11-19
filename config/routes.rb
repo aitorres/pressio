@@ -42,6 +42,11 @@ Rails.application.routes.draw do
 
   get '/equipo' => 'paginas#equipo'
 
+  get '/talentos' => 'talento#listar'
+  get '/talentos/aplicar/:id' => 'talento#aplicar', constraints: { :id => /[0-9]+(\%7C[0-9]+)*/ }
+
+  post '/talentos/aplicar/:id' => 'talento#aplicar2', constraints: { :id => /[0-9]+(\%7C[0-9]+)*/ }
+
   root to: 'paginas#inicio'
 
   devise_for :usuario, :controllers => { registrations: 'registro' }, :path => '', :path_names => { :sign_in => "iniciar-sesion", :sign_out => "cerrar-sesion", :sign_up => "registro" }

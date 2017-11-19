@@ -1,6 +1,6 @@
 class TalentoController < ApplicationController
 	def listar
-		@talento = Talento.
+		@talento = Talento.all
 	end
 	
 end
