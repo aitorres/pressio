@@ -2,11 +2,13 @@
 <p>Find me in app/views/perfil/inicio.html.erb</p>-->
 
 <section class="menu">
+	<div class="avatar well">
 	<%if @foto %>
-		<img src="@foto" alt="">
+		<%= image_tag @foto %>
 	<%else %>
-		<img src="desconocido" alt="">
-	<%end%> -->
+		<%= image_tag "desconocido.png" %>
+	<%end%>
+	</div>
 	<%if usuario_signed_in? %>
 		<p class="text-success text-center">Bienvenido, <%= @usuario.nombre + " " + @usuario.apellido %></p>
 	<%else %>
