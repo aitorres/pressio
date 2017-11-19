@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usuario: 1
+  campana: 1
+  talento: MyString
+
+two:
+  usuario: 1
+  campana: 1
+  talento: MyString
