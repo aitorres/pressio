@@ -2,9 +2,9 @@ class PerfilController < ApplicationController
 	def inicio
 		if usuario_signed_in?
 			@usuario = current_usuario
+		else
+			redirect_to "/iniciar-sesion"
 		end
-		puts current_usuario.nombre
-		puts "SEXOSEO"
 
 	end
 

@@ -2,42 +2,41 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :username %><br />
+<div class="input-group">
+  <div class="field form-control">
+    <%= f.label :username %>
     <%= f.text_field :username, autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
+  <div class="field form-control">
+    <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
+  <div class="field form-control">
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
-    <%= f.label :nombre %><br />
+  <div class="field form-control">
+    <%= f.label :nombre %>
     <%= f.text_field :nombre %>
   </div>
 
-  <div class="field">
-    <%= f.label :apellido %><br />
+  <div class="field form-control">
+    <%= f.label :apellido %>
     <%= f.text_field :apellido %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="field form-control">
+    <%= f.label :email %>
     <%= f.email_field :email %>
   </div>
 
-  
-
-  <div class="actions">
+    <div class="actions">
     <%= f.submit t('.sign_up') %>
   </div>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>
