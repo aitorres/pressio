@@ -1,26 +1,35 @@
 <%if !Rails.application.assets.find_asset("campanasbig/#{@campana.id}.jpg").nil? %>
-                <%= image_tag "campanasbig/#{@campana.id}.jpg" %>
+                <%= image_tag "campanasbig/#{@campana.id}.jpg", :class => "campana-cabecera" %>
             <%else %>
-                <%= image_tag "campanasbig/desconocido.png" %>
+                <%= image_tag "campanasbig/desconocido.png", :class => "campana-cabecera" %>
             <%end%>
 <div class="container-fluid vista-campana">
     <h2 class="text-center"><%= @campana.nombre %></h2>
     <h4 class="text-center"><%= @campana.sinopsis %></h4>
     <div class="row">
         <div class="col-md-8">
-            <h4>Descripción del proyecto</h4>
+            <h3>Descripción del proyecto</h3>
             <%= @campana.descripcion %>
             <% if @campana.solicita_dinero %>
-                <h3>Este proyecto solicita un aporte monetario</h3>
-                <p><strong>Cantidad solicitada</strong>: <%= @campana.dinero %></p> 
-                <p><strong>Cantidad obtenida</strong>: <%= @campana.dinero_obtenido %></p> 
+                <h4>Este proyecto solicita un aporte monetario</h4>
+                <p><strong>Cantidad solicitada</strong>: <%= "$" + @campana.dinero.to_s %></p> 
+                <p><strong>Cantidad obtenida</strong>: <%= "$" + @campana.dinero_obtenido.to_s %></p> 
+                <p><strong>Progreso</strong>: <%= ((@campana.dinero_obtenido)/(@campana.dinero)).to_s + "%" %></p> 
+                <p>¿Quieres asumir el reto?</p>
+                <button onclick="location.href = '/invertir/<%= @campana.id %>';" type="button" class="btn btn-primary">¡Aportar!</button>
             <% end %>
             <% if @campana.solicita_talentos %>
-                <h3>Este proyecto solicita talentos en su equipo</h3>
+                <h4>Este proyecto solicita los siguientes talentos en su equipo:</h4>
+                <% lista = @campana.talentos.split(",") %>
+                <ul>
+                <% lista.each do |x| %>
+                  <li><%= x %></li>
+                <%end%>
+                </ul>
             <% end %>
         </div>
         <div class="col-md-4 text-right">
-            <h4>Autor</h4>
+            <h3>Autor</h3>
             <hr class="limpiar" />
             <%if !Rails.application.assets.find_asset("autor-#{@autor.id}.png").nil? %>
                 <%= image_tag "autor-#{@autor.id}.png", :class => "avatar pull-right" %>

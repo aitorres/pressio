@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'invertir/invertir'
+  get '/invertir/:id' => 'invertir#invertir', constraints: { :id => /[0-9]+(\%7C[0-9]+)*/ }
+
   get 'campanas/crear'
 
   get 'perfil/inicio'
