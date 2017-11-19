@@ -26,20 +26,14 @@
 
 	<section id="inversiones" class="well">
 		<h2>Tus Inversiones</h2>
-		<div class="recuadro well">
-			<h3>Nombre de la camapaña</h3>
-			<br>
-			<h4>Inversion:</h4>
-			<span>Cantidad</span>
-			<span class="float-r"><a href="">detalles</a></span>
-		</div>
-		<div class="recuadro well">
-			<h3>Nombre de la camapaña</h3>
-			<br>
-			<h4>Inversion:</h4>
-			<span>Cantidad</span>
-			<span class="float-r"><a href="">detalles</a></span>
-		</div>
+		
+			<div class="recuadro well">
+				<h3>Nombre de la campaña</h3>
+				<br>
+				<h4>Inversion:</h4>
+				<span>cantida</span>
+				<span class="float-r"><a href="">detalles</a></span>
+			</div>
 	</section>
 	<section id="talentos" class="well">
 		<h2>Tus Trabajos</h2>
@@ -50,30 +44,19 @@
 			<span>Nombre del cargo asigando</span>
 			<span class="float-r"><a href="">detalles</a></span>
 		</div>
-		<div class="recuadro well">
-			<h3>Nombre de la camapaña</h3>
-			<br>
-			<h4>Cargo:</h4>
-			<span>Nombre del cargo asigando</span>
-			<span class="float-r"><a href="">detalles</a></span>
-		</div>
 	</section>
 	<section id="creados" class="well">
 		<h2>Tus Campañas</h2>
-		<div class="recuadro well">
-			<h3>Nombre de la camapaña</h3>
-			<br>
-			<h4>Progreso:</h4>
-			<span>Cantidad</span>
-			<span class="float-r"><a href="">detalles</a></span>
-		</div>
-		<div class="recuadro well">
-			<h3>Nombre de la camapaña</h3>
-			<br>
-			<h4>Progreso:</h4>
-			<span>Cantidad</span>
-			<span class="float-r"><a href="">detalles</a></span>
-		</div>
+		<% #@campanas.each do |campana| %>
+			<div class="recuadro well">
+				<h3></h3>
+				<br>
+				<h4>Progreso:</h4>
+				<span></span>
+				<span class="float-r">
+					<%= link_to "detalles" %>
+				</span>
+			</div>
 	</section>
 </section>
 

@@ -2,18 +2,15 @@ class PerfilController < ApplicationController
 	def inicio
 		if usuario_signed_in?
 			@usuario = current_usuario
+			#@campanas = Proyecto.find(autor = current_usuario.id)
+
 		else
 			redirect_to "/iniciar-sesion"
 		end
+
 	end
 
 	def inversor
-		lista_proyectos = Proyecto.all
-		for i in 1..lista_proyectos.length
-			if current_usuario.id == lista_proyectos.id
-				#@inversor = lista_proyectos.
-			end
-		end
 		#@inversor = 
 		#@cantidad_inversor
 	end
