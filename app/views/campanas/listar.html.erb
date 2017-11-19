@@ -7,7 +7,11 @@
   <div class="card-deck">
     <% for campana in @campanas[@pagina*@cantidad..(@pagina*@cantidad + @cantidad - 1)] %>
         <div class="card" style="width: 35rem;">
-          <%= image_tag "campanas/#{campana.id}.jpg", :class => "card-img-top" %>
+          <%if !Rails.application.assets.find_asset("campanas/#{campana.id}.jpg").nil? %>
+            <%= image_tag "campanas/#{campana.id}.jpg", :class => "card-img-top" %>
+          <%else%>
+            <%= image_tag "campana-desc.png", :class => "card-img-top" %>
+          <% end %>
           <div class="card-block">
             <h4 class="card-title"><%= campana.nombre %></h4>
             <p class="card-text"><%= campana.sinopsis %></p>
