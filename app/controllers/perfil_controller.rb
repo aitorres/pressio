@@ -2,7 +2,8 @@ class PerfilController < ApplicationController
 	def inicio
 		if usuario_signed_in?
 			@usuario = current_usuario
-			#@campanas = Proyecto.find(autor = current_usuario.id)
+			id = current_usuario.id
+			@campanas = Proyecto.where(autor:id)
 
 		else
 			redirect_to "/iniciar-sesion"
