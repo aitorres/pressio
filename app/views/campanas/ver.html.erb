@@ -1,7 +1,7 @@
 <%if !Rails.application.assets.find_asset("campanasbig/#{@campana.id}.jpg").nil? %>
-                <%= image_tag "campanasbig/#{@campana.id}.jpg" %>
+                <%= image_tag "campanasbig/#{@campana.id}.jpg", :class => "campana-cabecera" %>
             <%else %>
-                <%= image_tag "campanasbig/desconocido.png" %>
+                <%= image_tag "campanasbig/desconocido.png", :class => "campana-cabecera" %>
             <%end%>
 <div class="container-fluid vista-campana">
     <h2 class="text-center"><%= @campana.nombre %></h2>
