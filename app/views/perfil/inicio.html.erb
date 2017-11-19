@@ -3,11 +3,11 @@
 
 <section class="menu">
 	<div class="avatar center-block">
-		<%if @foto %>
-			<%= image_tag @foto %>
-		<%else %>
-			<%= image_tag "desconocido.png" %>
-		<%end%>
+		<%if !Rails.application.assets.find_asset("autor-#{@usuario.id}.png").nil? %>
+	        <%= image_tag "autor-#{@usuario.id}.png", :class => "avatar" %>
+	    <%else %>
+	        <%= image_tag "desconocido.png", :class => "avatar" %>
+	    <%end%>
 	</div>
 	<%if usuario_signed_in? %>
 		<p class="text-success text-center">Bienvenido, <%= @usuario.nombre + " " + @usuario.apellido %></p>
