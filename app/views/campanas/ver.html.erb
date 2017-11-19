@@ -1,4 +1,3 @@
-<%= image_tag "campanasbig/#{@campana.id}.jpg", :class => "campana-cabecera" %>
 <%if !Rails.application.assets.find_asset("campanasbig/#{@campana.id}.jpg").nil? %>
                 <%= image_tag "campanasbig/#{@campana.id}.jpg", :class => "avatar pull-right" %>
             <%else %>
