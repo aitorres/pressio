@@ -17,6 +17,7 @@ class CampanasController < ApplicationController
   def ver
     id = params[:id].to_i
     @campana = Proyecto.find(id)
+    @autor = Usuario.find(@campana.autor)
   end
 
   def aportar

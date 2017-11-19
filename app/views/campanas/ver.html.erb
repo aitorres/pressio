@@ -1,5 +1,17 @@
 <%= image_tag "campanasbig/#{@campana.id}.jpg", :class => "campana-cabecera" %>
-<div class="container-fluid">
+<div class="container-fluid vista-campana">
     <h2 class="text-center"><%= @campana.nombre %></h2>
     <h4 class="text-center"><%= @campana.sinopsis %></h4>
+    <div class="row">
+        <div class="col-md-8">
+            <h4>Descripción del proyecto</h4>
+            <%= @campana.descripcion %>
+        </div>
+        <div class="col-md-4 text-right">
+            <h4>Autor</h4>
+            <strong><%= @autor.nombre + " " + @autor.apellido %></strong><br/>
+            (<em><%= "@" + @autor.username %></em>)
+
+        </div>
+    </div>
 </div>
