@@ -2,12 +2,12 @@
 <p>Find me in app/views/perfil/inicio.html.erb</p>-->
 
 <section class="menu">
-	<div class="avatar well">
-	<%if @foto %>
-		<%= image_tag @foto %>
-	<%else %>
-		<%= image_tag "desconocido.png" %>
-	<%end%>
+	<div class="avatar center-block">
+		<%if @foto %>
+			<%= image_tag @foto %>
+		<%else %>
+			<%= image_tag "desconocido.png" %>
+		<%end%>
 	</div>
 	<%if usuario_signed_in? %>
 		<p class="text-success text-center">Bienvenido, <%= @usuario.nombre + " " + @usuario.apellido %></p>
@@ -22,24 +22,61 @@
 </section>
 
 
-<section class="main">
+<section class="main-datos ">
 
-	<section id="inversiones">
-		<div class="recuadro">
+	<section id="inversiones" class="well">
+		<h2>Tus Inversiones</h2>
+		<div class="recuadro well">
 			<h3>Nombre de la camapaña</h3>
 			<br>
 			<h4>Inversion:</h4>
-			<p>Cantidad</p>
-			<span><a href="">detalles</a></span>
+			<span>Cantidad</span>
+			<span class="float-r"><a href="">detalles</a></span>
+		</div>
+		<div class="recuadro well">
+			<h3>Nombre de la camapaña</h3>
+			<br>
+			<h4>Inversion:</h4>
+			<span>Cantidad</span>
+			<span class="float-r"><a href="">detalles</a></span>
 		</div>
 	</section>
-	<section id="talentos">
-		
+	<section id="talentos" class="well">
+		<h2>Tus Trabajos</h2>
+		<div class="recuadro well">
+			<h3>Nombre de la camapaña</h3>
+			<br>
+			<h4>Cargo:</h4>
+			<span>Nombre del cargo asigando</span>
+			<span class="float-r"><a href="">detalles</a></span>
+		</div>
+		<div class="recuadro well">
+			<h3>Nombre de la camapaña</h3>
+			<br>
+			<h4>Cargo:</h4>
+			<span>Nombre del cargo asigando</span>
+			<span class="float-r"><a href="">detalles</a></span>
+		</div>
 	</section>
-	<section id="creados">
-		
+	<section id="creados" class="well">
+		<h2>Tus Campañas</h2>
+		<div class="recuadro well">
+			<h3>Nombre de la camapaña</h3>
+			<br>
+			<h4>Progreso:</h4>
+			<span>Cantidad</span>
+			<span class="float-r"><a href="">detalles</a></span>
+		</div>
+		<div class="recuadro well">
+			<h3>Nombre de la camapaña</h3>
+			<br>
+			<h4>Progreso:</h4>
+			<span>Cantidad</span>
+			<span class="float-r"><a href="">detalles</a></span>
+		</div>
 	</section>
 </section>
 
+<hr class="limpiar" />
 
-	
+

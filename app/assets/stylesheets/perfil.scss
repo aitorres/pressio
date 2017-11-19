@@ -16,10 +16,32 @@
     padding: 0.5em;
     border: solid 1px rgba(255, 255, 255, 0.25);
     background-color: rgba(255, 255, 255, 0.075);
+    width: 100%;
 }
 
 .avatar img {
     border-radius: 100%;
     display: block;
     width: 10em;
+    margin: auto;
+}
+
+/* -------- Vista de Invrsiones Creados y Talentos---------*/
+
+.main-datos{
+	width: 75%;
+	float: right;
+	padding: 20px;
+
+}
+.recuadro h4{
+	display: inline-block;
+}
+.float-r{
+	float: right;
+}
+
+hr.limpiar {
+	visibility: none;
+	clear:both;
 }
