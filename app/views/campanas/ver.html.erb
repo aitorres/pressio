@@ -14,7 +14,12 @@
                 <h4>Este proyecto solicita un aporte monetario</h4>
                 <p><strong>Cantidad solicitada</strong>: <%= "$" + @campana.dinero.to_s %></p> 
                 <p><strong>Cantidad obtenida</strong>: <%= "$" + @campana.dinero_obtenido.to_s %></p> 
-                <p><strong>Progreso</strong>: <%= ((@campana.dinero_obtenido)/(@campana.dinero)).to_s + "%" %></p> 
+                <p><strong>Progreso</strong>: 
+                    <% if @campana.dinero_obtenido.nil? && @campana.dinero.nil? %> 
+                        <%=((@campana.dinero_obtenido)/(@campana.dinero)).to_s + "%" %>
+                    <%else%>
+                        nil
+                    <%end%></p> 
                 <p>¿Quieres asumir el reto?</p>
                 <button onclick="location.href = '/invertir/<%= @campana.id %>';" type="button" class="btn btn-primary">¡Aportar!</button>
             <% end %>
