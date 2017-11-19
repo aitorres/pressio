@@ -1,8 +1,10 @@
 class PerfilController < ApplicationController
 	def inicio
 		if usuario_signed_in?
-			@nombre = current_usuario.email
+			@usuario = current_usuario
 		end
+		puts current_usuario.nombre
+		puts "SEXOSEO"
 
 	end
 

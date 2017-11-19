@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
   root to: 'paginas#inicio'
 
-  devise_for :usuario, :path => '', :path_names => { :sign_in => "iniciar-sesion", :sign_out => "cerrar-sesion", :sign_up => "registro" }
+  devise_for :usuario, :controllers => { registrations: 'registro' }, :path => '', :path_names => { :sign_in => "iniciar-sesion", :sign_out => "cerrar-sesion", :sign_up => "registro" }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
