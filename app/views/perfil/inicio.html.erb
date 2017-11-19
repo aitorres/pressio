@@ -16,7 +16,7 @@
 	<%end%>
 	<hr>
 	<p class="text-warning text-center">Editar Perfil</p>
-	<p class="text-danger text-center">Cerrar Sesion</p>
+	<%= link_to "Cerrar sesión", destroy_usuario_session_path, :method => :delete, :class => "text-danger center-block text-center" %>
 
 
 </section>
