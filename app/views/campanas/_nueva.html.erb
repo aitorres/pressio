@@ -39,6 +39,18 @@
       <%= f.check_box :solicita_dinero, :class => 'form-control' %>
     </div>
   </div>
+  <div class="form-group">
+    <%= f.label :dinero, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :dinero, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :talentos, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :talentos, :class => 'form-control' %>
+    </div>
+  </div>
   <%= f.hidden_field :autor, value: current_usuario.id %>
 
   

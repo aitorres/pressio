@@ -50,6 +50,6 @@ class CampanasController < ApplicationController
 
   private
   def campana_params
-    params.require(:proyecto).permit(:autor, :nombre, :sinopsis, :descripcion, :solicita_talentos, :solicita_dinero)
+    params.require(:proyecto).permit(:autor, :dinero, :talentos, :nombre, :sinopsis, :descripcion, :solicita_talentos, :solicita_dinero)
   end
 end
