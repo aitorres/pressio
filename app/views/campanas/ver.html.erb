@@ -6,11 +6,13 @@
 <div class="container-fluid vista-campana">
     <h2 class="text-center"><%= @campana.nombre %></h2>
     <h4 class="text-center"><%= @campana.sinopsis %></h4>
+    <hr/>
     <div class="row">
         <div class="col-md-8">
             <h3>Descripción del proyecto</h3>
             <%= @campana.descripcion %>
             <% if @campana.solicita_dinero %>
+                <hr/>
                 <h4>Este proyecto solicita un aporte monetario</h4>
                 <p><strong>Cantidad solicitada</strong>: <%= "$" + @campana.dinero.to_s %></p> 
                 <p><strong>Cantidad obtenida</strong>: <%= "$" + @campana.dinero_obtenido.to_s %></p> 
@@ -22,8 +24,10 @@
                     <%end%></p> 
                 <p>¿Quieres asumir el reto?</p>
                 <button onclick="location.href = '/invertir/<%= @campana.id %>';" type="button" class="btn btn-primary">¡Aportar!</button>
+
             <% end %>
             <% if @campana.solicita_talentos %>
+                <hr/>
                 <h4>Este proyecto solicita los siguientes talentos en su equipo:</h4>
                 <% lista = @campana.talentos.split(",") %>
                 <ul>

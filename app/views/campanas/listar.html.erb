@@ -2,6 +2,7 @@
 <h1 class="text-center">¡Campañas!</h1>
 <p class="text-center">Cada Jugador tiene una historia que contar: un proyecto, una empresa, una visión de futuro para compartir contigo. ¡Escucha su voz y escribe esta historia con ellos!</p>
 
+<hr/>
 
 <% if !@campanas.blank? %>
   <div class="card-deck">
@@ -21,7 +22,8 @@
     <% end %>
   </div>
   <br/>
-    <p>¿Quieres encontrar financiamiento y talentos para tu idea? <a href="/campanas/crear">¡Crea tu campaña!</a></p>
+    <p class="text-center">¿Quieres encontrar financiamiento y talentos para tu idea?</p>
+    <button onclick="location.href = '/campanas/crear';" type="button" class="btn center-block btn-primary">¡Crear!</button>
 <% else %>
     <p>Por ahora no hay campañas... <a href="/campanas/crear">¿Y si creas una?</a></p>
 <% end %>
