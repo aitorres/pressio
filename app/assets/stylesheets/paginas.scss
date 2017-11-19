@@ -46,7 +46,7 @@ body {
     overflow-x: hidden;
 }
 
-.footer{padding:25px;margin-top:50px;color:#99979c;text-align:center;background-color:#2a2730}
+.footer{padding:25px;margin-top:0px;color:#99979c;text-align:center;background-color:#2a2730}
 .footer
 .footer a{color:#fff}
 .footer-links{padding-left:0;margin-bottom:20px}
@@ -54,6 +54,11 @@ body {
 .footer-links li+li{margin-left:15px}
 @media (min-width:768px){.footer{text-align:left}
 .footer p{margin-bottom:0}}
+.red-social{
+    font-size: 20px;
+    color: #fff;
+}
+
 
 .slide{
     position: relative;
@@ -68,19 +73,4 @@ body {
 
 .carousel-caption {
     top: 50%;
-}
-
-.carousel-caption a:link {
-    color: #fff;
-    text-decoration: none;
-}
-
-.carousel-caption h3 a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.carousel-caption h3 a:hover {
-    color: #fff;
-    text-decoration: none;
 }
