@@ -61,7 +61,11 @@ body {
     
 }
 
-.carousel-inner {
+.carousel, .carousel-inner {
   max-height: 90vh;
   min-width: auto;
 } 
+
+.carousel-caption {
+    top: 50%;
+}

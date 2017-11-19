@@ -17,7 +17,11 @@
         <li class="nav-item"><a href="/quienes-somos" class="nav-link">Quiénes somos</a></li>
         <li class="nav-item"><a href="/equipo" class="nav-link">Equipo</a></li>
         <li class="nav-item"><a href="/campanas" class="nav-link">Campañas</a></li>
-        <li class="nav-item"><a href="/perfil" class="nav-link">Perfil</a></li>
+        <% if usuario_signed_in? %>
+          <li class="nav-item"><a href="/perfil" class="nav-link">Perfil</a></li>
+        <% else %>
+          <li class="nav-item"><a href="/iniciar-sesion" class="nav-link">Iniciar sesión</a></li>
+        <% end %>
       </ul>
     </div><!--/.nav-collapse -->
     </nav>
