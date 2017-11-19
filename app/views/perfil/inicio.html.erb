@@ -6,17 +6,15 @@
 </header>
 
 <section class="menu">
-	<!--foto
-	<%if  @foto %>
+	<%if @foto %>
 		<img src="@foto" alt="">
 	<%else %>
 		<img src="desconocido" alt="">
 	<%end%> -->
-	<!--nombre-->
-	<%if  @nombre %>
-		<p class="text-success text-center">Bienvenido "<%= @nombre %>"</p>
+	<%if usuario_signed_in? %>
+		<p class="text-success text-center">Bienvenido, <%= @usuario.nombre + " " + @usuario.apellido %></p>
 	<%else %>
-		<h2>Bienvenido Desconocido</h2>
+		<h2>Bienvenido, desconocido</h2>
 	<%end%>
 	<hr>
 	<p class="text-warning text-center">Editar Perfil</p>

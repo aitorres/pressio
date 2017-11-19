@@ -1,9 +1,8 @@
 class PerfilController < ApplicationController
 	def inicio
 		if usuario_signed_in?
-			@nombre = current_usuario.usuario
+			@usuario = current_usuario
 		end
-
 	end
 
 	def inversor
