@@ -1,19 +1,25 @@
+<div class="container-fluid">
 <h1>¡Campañas!</h1>
 <p>Cada Jugador tiene una historia que contar: un proyecto, una empresa, una visión de futuro para compartir contigo. ¡Escucha su voz y escribe esta historia con ellos!</p>
 
 
 <% if !@campanas.blank? %>
+  <div class="card-deck">
     <% for campana in @campanas[@pagina*@cantidad..(@pagina*@cantidad + @cantidad - 1)] %>
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card" style="width: 35rem;">
+          <%= image_tag "campanas/#{campana.id}.jpg", :class => "card-img-top" %>
           <div class="card-block">
             <h4 class="card-title"><%= campana.nombre %></h4>
             <p class="card-text"><%= campana.sinopsis %></p>
             <a href="/campanas/ver/<%= campana.id %>" class="btn btn-primary">¡Leer más!</a>
           </div>
         </div>
-        
     <% end %>
+  </div>
+  <br/>
+    <p>¿Quieres encontrar financiamiento y talentos para tu idea? <a href="/campanas/crear">¡Crea tu campaña!</a></p>
 <% else %>
-    
+    <p>Por ahora no hay campañas... <a href="/campanas/crear">¿Y si creas una?</a></p>
 <% end %>
+
+</div>
