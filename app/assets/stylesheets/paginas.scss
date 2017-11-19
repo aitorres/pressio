@@ -74,3 +74,40 @@ body {
 .carousel-caption {
     top: 50%;
 }
+
+
+.icono{
+    font-size: 150px;
+    display: block;
+    margin: auto;
+}
+
+.este{
+    color: rgba(158,42,142,1);
+}
+
+.descripcion{
+    min-height: 300px;
+}
+
+.parte2{
+    background-color: beige;
+    min-height: 250px;
+    padding: 40px;
+    margin: 0;
+}
+
+.carousel-caption a:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.carousel-caption h3 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.carousel-caption h3 a:hover {
+    color: #fff;
+    text-decoration: none;
+}
