@@ -47,8 +47,8 @@ body {
 }
 
 .footer{padding:25px;margin-top:50px;color:#99979c;text-align:center;background-color:#2a2730}
-.footer
-.footer a{color:#fff}
+.footer{}
+.footer a{color:#fff; text-decoration: none}
 .footer-links{padding-left:0;margin-bottom:20px}
 .footer-links li{display:inline-block}
 .footer-links li+li{margin-left:15px}
@@ -112,4 +112,11 @@ body {
 .carousel-caption h3 a:hover {
     color: #fff;
     text-decoration: none;
+}
+
+.line{
+    width: 60%;
+    display: block;
+    margin: auto;
+    color: rgba(158,42,142,1);
 }

@@ -1,14 +1,14 @@
 <%= render "paginas/slider" %>
 <section class="main">
-	<!-- <div class="descripcion row">
-		<div class="col-md-6 col-sm-12">
-			<img src="#" alt="">
-		</div>
-		<div class="col-md-6 col-sm-12">
+	<div class="descripcion row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
 			<h2 class="text-center">Pressio</h2>
-			<p>hola</p>
+			<div class="line"><hr></div>
+			<p class="text-center">Bienvenido a la plataforma Pressio. Aqui podras llevar a cabo tus sueños, invertir en proyectos innovadores, o aportar a cualquier proyecto segun tus habilidades.<br> Conoce mas sobre las Campañas</p>
 		</div>
-	</div> -->
+		<div class="col-sm-4"></div>
+	</div>
 	<div class="parte2 row">
 		<div class="elemento col-md-4 col-sm-12">
 			<span class="icon-brand4 icono text-center" ></span>
@@ -26,7 +26,7 @@
 			<span class="icon-trophy icono este text-center	" ></span>
 			<h3 class="text-center">Convierte tu sueño en realidad</h3>
 			<p class="text-center">Consigue inversores, interesados en ayudar en tu proyecto y logra tu meta</p>
-			<%= button_to "Crea una Campaña", "/campanas" , class:"center-block btn btn-primary", :method => :get %>
+			<%= button_to "Crea una Campaña", "/campanas/crear" , class:"center-block btn btn-primary" %>
 		</div>
 	</div>
 
