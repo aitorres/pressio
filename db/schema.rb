@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171119181526) do
+ActiveRecord::Schema.define(version: 20171119183641) do
 
   create_table "inversions", force: :cascade do |t|
     t.integer "usuario"
@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 20171119181526) do
     t.datetime "updated_at", null: false
     t.boolean "solicita_talentos"
     t.boolean "solicita_dinero"
-    t.string "talentos"
+    t.string "talentos", default: ""
     t.integer "dinero"
-    t.integer "dinero_obtenido"
+    t.integer "dinero_obtenido", default: 0
   end
 
   create_table "talentos", force: :cascade do |t|

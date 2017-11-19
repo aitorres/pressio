@@ -26,14 +26,27 @@
 
 	<section id="inversiones" class="well">
 		<h2>Tus Inversiones</h2>
-		
+		<% if !@inversiones.nil? 
+			@inversiones.each do |t| %>
+				<div class="recuadro well">
+					<h3><%= Proyecto.find(t.campana).nombre %></h3>
+					<br>
+					<h4>Aporte:</h4>
+					<span>$<%= t.dinero %></span>
+					<br>
+					<h4>Recaudado hasta ahora:</h4>
+					<span>$<%= Proyecto.find(t.campana).dinero - Proyecto.find(t.campana).dinero_obtenido %></span>
+					<span class="float-r">
+						<%= link_to "detalles" %>
+					</span>
+				</div>
+			<% end 
+		else%>
 			<div class="recuadro well">
-				<h3>Nombre de la campaña</h3>
-				<br>
-				<h4>Inversion:</h4>
-				<span>cantida</span>
-				<span class="float-r"><a href="">detalles</a></span>
+				<h3>Todavia no has hecho inversiones. ¡Revisa las campañas!</h3>
+				<%= link_to "Revisar campañas", "/campanas" %>
 			</div>
+		<% end %>
 	</section>
 	<section id="talentos" class="well">
 		<h2>Tus Trabajos</h2>
@@ -47,16 +60,16 @@
 	</section>
 	<section id="creados" class="well">
 		<h2>Tus Campañas</h2>
-		<% if @campana.nil? 
+		<% if !@campanas.nil? 
 			@campanas.each do |campana| %>
 				<div class="recuadro well">
 					<h3><%= campana.nombre %></h3>
 					<br>
 					<h4>Progreso:</h4>
-					<span>$<%= campana.dinero_obtenido %></span>
+					<span><% if campana.solicita_dinero %><%= "$" + campana.dinero_obtenido.to_s %><% else %>Esta campaña solicita talentos únicamente. <%end %></span>
 					<br>
 					<h4>Restante:</h4>
-					<span>$<%= (campana.dinero) %></span>
+					<span>$<%= (campana.dinero - campana.dinero_obtenido) %></span>
 					<span class="float-r">
 						<%= link_to "detalles" %>
 					</span>

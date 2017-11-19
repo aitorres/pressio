@@ -4,6 +4,7 @@ class PerfilController < ApplicationController
 			@usuario = current_usuario
 			id = current_usuario.id
 			@campanas = Proyecto.where(autor:id)
+			@inversiones = Inversion.where(usuario:id)
 
 		else
 			redirect_to "/iniciar-sesion"
