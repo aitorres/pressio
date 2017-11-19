@@ -47,13 +47,16 @@
 	</section>
 	<section id="creados" class="well">
 		<h2>Tus Campañas</h2>
-		<% if @campana 
+		<% if @campana.nil? 
 			@campanas.each do |campana| %>
 				<div class="recuadro well">
 					<h3><%= campana.nombre %></h3>
 					<br>
 					<h4>Progreso:</h4>
-					<span><%= campana.dinero %> BTC</span>
+					<span>$<%= campana.dinero_obtenido %></span>
+					<br>
+					<h4>Restante:</h4>
+					<span>$<%= (campana.dinero) %></span>
 					<span class="float-r">
 						<%= link_to "detalles" %>
 					</span>
