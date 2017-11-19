@@ -1,0 +1,49 @@
+<%= form_for :proyecto, :html => { :class => 'form-campana' } do |f| %>
+  <% if @campana.errors.any? %>
+  <div class="alert alert-danger">
+    <h3><%= pluralize(@campana.errors.count, "error") %> impidieron crear esta campaña:</h3>
+    <ul>
+    <% @campana.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :nombre, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sinopsis, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :sinopsis, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :descripcion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :descripcion, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :solicita_talentos, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :solicita_talentos, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :solicita_dinero, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :solicita_dinero, :class => 'form-control' %>
+    </div>
+  </div>
+  <%= f.hidden_field :autor, value: current_usuario.id %>
+
+  
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            campanas_path, :class => 'btn btn-default' %>
+ 
+<% end %>

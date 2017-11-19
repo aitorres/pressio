@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'perfil/inversor'
 
+  post '/campanas/crear' => 'campanas#crear2'
+
   get 'perfil/talentos'
 
   get 'perfil/creador'

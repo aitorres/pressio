@@ -16,6 +16,7 @@ class CampanasController < ApplicationController
 
   def ver
     id = params[:id].to_i
+    id -= 1
     @campana = Proyecto.all[id]
   end
 
@@ -26,9 +27,29 @@ class CampanasController < ApplicationController
   end
 
   def crear
-    
+    @campana = Proyecto.new
+  end
+
+  def crear2
+    puts params[:proyecto]
+    @campana = Proyecto.new(campana_params)
+
+    respond_to do |format|
+      if @campana.save
+        format.html { redirect_to '/campanas/listar', notice: '¡Has creado tu campaña satisfactoriamente! ;-)' }
+        format.json { render :show, status: :created, location: @campana }
+      else
+        format.html { render :crear }
+        format.json { render json: @campana.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def borrar
+  end
+
+  private
+  def campana_params
+    params.require(:proyecto).permit(:autor, :nombre, :sinopsis, :descripcion, :solicita_talentos, :solicita_dinero)
   end
 end
