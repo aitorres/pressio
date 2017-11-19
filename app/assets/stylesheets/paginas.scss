@@ -89,7 +89,7 @@ body {
 .descripcion{
     min-height: 300px;
 }
-
+    
 .parte2{
     background-color: beige;
     min-height: 250px;
@@ -119,4 +119,14 @@ body {
     display: block;
     margin: auto;
     color: rgba(158,42,142,1);
+}
+.wrap{
+    width: 70%;
+    display: block;
+    margin: auto;
+
+}
+
+.img-equipo{
+    max-width: 250px;
 }
