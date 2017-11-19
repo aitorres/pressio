@@ -1,0 +1,28 @@
+<%= form_for :inversion, :html => { :class => 'form-campana' } do |f| %>
+  <% if @inversion.errors.any? %>
+  <div class="alert alert-danger">
+    <h3><%= pluralize(@inversion.errors.count, "error") %> impidieron crear esta campaña:</h3>
+    <ul>
+    <% @inversion.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :dinero, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :dinero, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <%= f.hidden_field :usuario, value: current_usuario.id %>
+  <%= f.hidden_field :campana, value: @idc %>
+
+  
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            campanas_path, :class => 'btn btn-default' %>
+ 
+<% end %>

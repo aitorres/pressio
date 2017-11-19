@@ -9,11 +9,6 @@ class CampanasController < ApplicationController
     end
   end
 
-  def buscar
-    # Si no hay slug, mostrar camp ode búsqueda y un easter egg.
-    # Si hay, entonces hacer busqueda en DB y mostrar resultados en links
-  end
-
   def ver
     id = params[:id].to_i
     @campana = Proyecto.find(id)
